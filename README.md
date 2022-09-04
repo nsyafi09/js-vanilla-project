@@ -1,2 +1,2 @@
 # js-vanilla-project
- Personal JS Project for learning
+ Personal very simple JS Projects for learning basics
