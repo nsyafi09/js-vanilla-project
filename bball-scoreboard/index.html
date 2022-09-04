@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoreboard Basketball</title>
+    <!-- Links style -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="scoreboard">
+            <div class="home-board">
+                <h2>HOME</h2>
+                <div class="display-home">
+                    <span id="home-score">0</span>
+                </div>
+                <div class="home-btns">
+                    <ul>
+                        <li>
+                            <button id="home-1" onclick="home1()">+1</button>
+                        </li>
+                        <li>
+                            <button id="home-2" onclick="home2()">+2</button>
+                        </li>
+                        <li>
+                            <button id="home-3" onclick="home3()">+3</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="away-board">
+                <h2>AWAY</h2>
+                <div class="display-away">
+                    <span id="away-score">0</span>
+                </div>
+                <div class="away-btns">
+                    <ul>
+                        <li>
+                            <button class="away plus1">+1</button>
+                        </li>
+                        <li>
+                            <button class="away plus2">+2</button>
+                        </li>
+                        <li>
+                            <button class="away plus3">+3</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
