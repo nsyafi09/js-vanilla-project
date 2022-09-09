@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Password space */
+.password-space ul {
+    display: flex;
+    /* margin-right: 10px;
+    margin-left: 10px; */
+}
+
+.password-space li {
+    margin-right: 15px;
+    margin-left: 15px;
+}
