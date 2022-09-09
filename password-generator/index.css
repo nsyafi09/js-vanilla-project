@@ -1,6 +1,22 @@
+/* Variables */
+:root {
+    --clr-bright-green: #55f991;
+    --clr-dark-green: #10b981;
+  
+    --clr-very-dark-blue: #1f2937;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
 body {
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
+    color: #fff;
+    background-color: #625f5f;
 }
 
 ul {
@@ -8,14 +24,30 @@ ul {
     padding-left: 0;
 }
 
-/* .container {
+.container {
     display: flex;
     flex-direction: column;
-} */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.password-generator-container {
+    width: min(90%, 33rem);
+    padding: 2em;
+    background-color: var(--clr-very-dark-blue);
+    border-radius: 0.25em;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+        0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+        0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+}
+
 
 /* Password space */
 .password-space ul {
     display: flex;
+    justify-content: center;
+    /* align-items: center; */
     /* margin-right: 10px;
     margin-left: 10px; */
 }
