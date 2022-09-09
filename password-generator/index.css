@@ -8,6 +8,11 @@ ul {
     padding-left: 0;
 }
 
+/* .container {
+    display: flex;
+    flex-direction: column;
+} */
+
 /* Password space */
 .password-space ul {
     display: flex;

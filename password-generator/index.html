@@ -6,19 +6,28 @@
     <body>
         <div class="container">
             <div class="password-generator-container">
-                <div class="title">
-                    <h1>GENERATE TITLE</h1>
+                <div class="upperSec">
+                    <h1 class="title">Generate a<br><span class="title-green">random password</span></h1>
+                    <h2 class="supportingTitle">Never use an insecure password again.</h2>
+                    <span id="password-slider-text">Length: <label for="slider" id="sliderNumber">8</label></span>
+
+                    <input type="range" min="8" max="15" value="8" class="slider" id="slider" name="slider"></input>
+                    
+                    <button class="btn" onclick="getGeneratePassword()">Generate Password</button>
                 </div>
-                <button onclick="generatePassword()">Generate Password</button>
-                <div class="password-space">
-                    <ul>
-                        <li>
-                            <h1 id="password-1"></h1>
-                        </li>
-                        <li>
-                            <h1 id="password-2"></h1>
-                        </li>
-                    </ul>
+                <div class="underSec">
+                    <div class="password-space">
+                        <!-- <div class="generated-password" id="password-1"><i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                        </div> -->
+                        <ul>
+                            <li>
+                                <h1 id="password-1"></h1>
+                            </li>
+                            <li>
+                                <h1 id="password-2"></h1>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
