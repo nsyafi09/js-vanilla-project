@@ -4,7 +4,11 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"
 const password1El = document.getElementById("password-1");
 const password2El = document.getElementById("password-2");
 
-let passwordLength = 15
+// Slider element
+const slider = document.getElementById("slider");
+let sliderNumber = document.getElementById("sliderNumber");
+
+let passwordLength = 8
 
 
 function generatePassword() {
@@ -26,7 +30,13 @@ function getGeneratePassword() {
     password2El.innerHTML = generatePassword()
 }
 
-
+// Create an input event listener for slider element
+slider.addEventListener("input", function () {
+    // Display the value of the slider
+    sliderNumber.textContent = `${slider.value}`;
+    // Assign to passwordLength new value
+    passwordLength = slider.value;
+  });
 
 
 console.log(Math.floor(Math.random() * characters.length))
