@@ -5,6 +5,8 @@ const inputEl = document.getElementById("input-el")
 const ulEl = document.getElementById("ul-el")
 // Get the delete button element html
 const deleteBtn = document.getElementById("delete-btn")
+// Get tab button element
+const tabBtn = document.getElementById("tab-btn")
 
 // Empty ARRAY for collecting leads
 let myLeads = ["www.awesomelead.com", "www.epiclead.com", "www.greatlead.com"]
@@ -15,6 +17,23 @@ if (leadsFromLocalStorage) {
     render(myLeads)
 }
 
+// const tabs = [
+//     {url: "https://www.linkedin.com/in/per-harald-borgen/"}
+// ]
+
+// Event listener for click for tabBtn
+tabBtn.addEventListener("click", function () {
+    // Get current tab from chrome:
+    // Active is current tabs, currentwindow is the current chrome window
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        // console.log(tabs)
+        myLeads.push(tabs[0].url)
+        localStorage.setItem("myLeads", JSON.stringify(myLeads))
+        render(myLeads)
+    })
+})
+
+
 // Event listener for delte button (Double click)
 deleteBtn.addEventListener("dblclick", function() {
     localStorage.clear()
@@ -23,7 +42,7 @@ deleteBtn.addEventListener("dblclick", function() {
 })
 
 
-// Trying event listener
+// Trying event listener for save
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
     inputEl.value = ""
