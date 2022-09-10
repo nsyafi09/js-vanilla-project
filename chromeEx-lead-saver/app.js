@@ -12,14 +12,14 @@ let myLeads = ["www.awesomelead.com", "www.epiclead.com", "www.greatlead.com"]
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
-    renderLeads()
+    render(myLeads)
 }
 
 // Event listener for delte button (Double click)
 deleteBtn.addEventListener("dblclick", function() {
     localStorage.clear()
     myLeads = []
-    renderLeads()
+    render(myLeads)
 })
 
 
@@ -31,22 +31,22 @@ inputBtn.addEventListener("click", function() {
     // LocalStorage/ JSON can only store string
     localStorage.setItem("myLeads", JSON.stringify(myLeads))
 
-    renderLeads()
+    render(myLeads)
 })
 
-function renderLeads() {
+// Make the function my dynamic by givign it an argument to take
+function render(leads) { // Refactoring (to make function dynamic)
     let listItems = ""
-    for (let i = 0; i < myLeads.length; i++) {
+    for (let i = 0; i < leads.length; i++) {
         // listItems += "<li><a target='_blank' href='" + myLeads[i] + "'>" + myLeads[i] + "</a></li>"
         // Use TEMPLATE STRING instead:
         listItems += `
             <li>
-                <a target='_blank' href='${myLeads[i]}'>
-                    ${myLeads[i]}
+                <a target='_blank' href='${leads[i]}'>
+                    ${leads[i]}
                 </a>
             </li>
         `
-        
         // Use dom 3 times (un-optimized) instant
         // ulEl.innerHTML += "<li>" + myLeads[i] + "</li>"
 
