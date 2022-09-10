@@ -7,12 +7,22 @@ const ulEl = document.getElementById("ul-el")
 // Empty ARRAY for collecting leads
 let myLeads = ["www.awesomelead.com", "www.epiclead.com", "www.greatlead.com"]
 
+let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
+if (leadsFromLocalStorage) {
+    myLeads = leadsFromLocalStorage
+    renderLeads()
+}
+
+
 // Trying event listener
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
-    console.log(myLeads)
-    renderLeads()
     inputEl.value = ""
+    // Save myLeads array to LocalStorage (USE stringify to turn into string)
+    // LocalStorage/ JSON can only store string
+    localStorage.setItem("myLeads", JSON.stringify(myLeads))
+
+    renderLeads()
 })
 
 function renderLeads() {
