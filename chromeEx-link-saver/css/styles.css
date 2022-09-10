@@ -1,5 +1,5 @@
 :root {
-    --green: #5f9341;
+    --dark-blue: #1f2937;
 }
 
 * {
@@ -17,7 +17,7 @@ li {
 }
 
 a {
-    color: var(--green);
+    color: var(--dark-blue);
 }
 
 body {
@@ -38,16 +38,16 @@ input {
 
 button {
     color: white;
-    background-color: var(--green);
-    border: 1px solid var(--green);
+    background-color: var(--dark-blue);
+    border: 1px solid var(--dark-blue);
     padding: 10px 20px;
     font-weight: 700;
 }
 
 #delete-btn {
-    color: var(--green);
+    color: var(--dark-blue);
     background-color: white;
-    border: 1px solid var(--green);
+    border: 1px solid var(--dark-blue);
     padding: 10px 20px;
     font-weight: 700;
 }

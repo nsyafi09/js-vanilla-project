@@ -9,12 +9,12 @@ const deleteBtn = document.getElementById("delete-btn")
 const tabBtn = document.getElementById("tab-btn")
 
 // Empty ARRAY for collecting leads
-let myLeads = ["www.awesomelead.com", "www.epiclead.com", "www.greatlead.com"]
+let myURLs = ["www.awesomelead.com", "www.epiclead.com", "www.greatlead.com"]
 
-const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
-if (leadsFromLocalStorage) {
-    myLeads = leadsFromLocalStorage
-    render(myLeads)
+const URLsFromLocalStorage = JSON.parse(localStorage.getItem("myURLs"))
+if (URLsFromLocalStorage) {
+    myURLs = URLsFromLocalStorage
+    render(myURLs)
 }
 
 // const tabs = [
@@ -27,9 +27,9 @@ tabBtn.addEventListener("click", function () {
     // Active is current tabs, currentwindow is the current chrome window
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         // console.log(tabs)
-        myLeads.push(tabs[0].url)
-        localStorage.setItem("myLeads", JSON.stringify(myLeads))
-        render(myLeads)
+        myURLs.push(tabs[0].url)
+        localStorage.setItem("myURLs", JSON.stringify(myURLs))
+        render(myURLs)
     })
 })
 
@@ -37,32 +37,32 @@ tabBtn.addEventListener("click", function () {
 // Event listener for delte button (Double click)
 deleteBtn.addEventListener("dblclick", function() {
     localStorage.clear()
-    myLeads = []
-    render(myLeads)
+    myURLs = []
+    render(myURLs)
 })
 
 
 // Trying event listener for save
 inputBtn.addEventListener("click", function() {
-    myLeads.push(inputEl.value)
+    myURLs.push(inputEl.value)
     inputEl.value = ""
     // Save myLeads array to LocalStorage (USE stringify to turn into string)
     // LocalStorage/ JSON can only store string
-    localStorage.setItem("myLeads", JSON.stringify(myLeads))
+    localStorage.setItem("myURLs", JSON.stringify(myURLs))
 
-    render(myLeads)
+    render(myURLs)
 })
 
 // Make the function my dynamic by givign it an argument to take
-function render(leads) { // Refactoring (to make function dynamic)
+function render(url) { // Refactoring (to make function dynamic)
     let listItems = ""
-    for (let i = 0; i < leads.length; i++) {
+    for (let i = 0; i < url.length; i++) {
         // listItems += "<li><a target='_blank' href='" + myLeads[i] + "'>" + myLeads[i] + "</a></li>"
         // Use TEMPLATE STRING instead:
         listItems += `
             <li>
-                <a target='_blank' href='${leads[i]}'>
-                    ${leads[i]}
+                <a target='_blank' href='${url[i]}'>
+                    ${url[i]}
                 </a>
             </li>
         `
