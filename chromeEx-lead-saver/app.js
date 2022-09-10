@@ -3,15 +3,24 @@
 const inputBtn = document.getElementById("input-btn")
 const inputEl = document.getElementById("input-el")
 const ulEl = document.getElementById("ul-el")
+// Get the delete button element html
+const deleteBtn = document.getElementById("delete-btn")
 
 // Empty ARRAY for collecting leads
 let myLeads = ["www.awesomelead.com", "www.epiclead.com", "www.greatlead.com"]
 
-let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
+const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
     renderLeads()
 }
+
+// Event listener for delte button (Double click)
+deleteBtn.addEventListener("dblclick", function() {
+    localStorage.clear()
+    myLeads = []
+    renderLeads()
+})
 
 
 // Trying event listener

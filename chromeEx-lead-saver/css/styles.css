@@ -41,5 +41,12 @@ button {
     border: 1px solid var(--green);
     padding: 10px 20px;
     font-weight: 700;
-    border: none;
+}
+
+#delete-btn {
+    color: var(--green);
+    background-color: white;
+    border: 1px solid var(--green);
+    padding: 10px 20px;
+    font-weight: 700;
 }
