@@ -1,0 +1,44 @@
+:root {
+    --green: #5f9341;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    margin-top: 20px;
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    margin-top: 5px;
+}
+
+a {
+    color: var(--green);
+}
+
+body {
+    margin: 0;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+input {
+    padding: 10px 10px;
+    width: 100%;
+    border: 1px solid #5f9341;
+    margin-bottom: 4px;
+}
+
+button {
+    color: white;
+    background-color: var(--green);
+    border: 1px solid var(--green);
+    padding: 10px 20px;
+    font-weight: 700;
+    border: none;
+}
